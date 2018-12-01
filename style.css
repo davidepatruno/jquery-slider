@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider_wrapper {
+  margin: 10% auto;
+  height: 400px;
+  width: 800px;
+  display: flex;
+}
+
+.images {
+  width: 600px;
+}
+
+.images > img {
+  height: 400px;
+}
+
+.arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80px;
+  height: 400px;
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.arrow i {
+  color: black;
+  font-size: 30px;
+}
+
+.right_arrow > i {
+  align-self: flex-end;
+}
+
+.active {
+  display: block;
+}
+
+.unactive {
+  display: none;
+}
