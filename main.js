@@ -19,17 +19,30 @@ $('.arrow').click(function(){
     }
     else {
       $('.images img').first().addClass('active');
+      $('.images img').first().removeClass('unactive')
+      $('.images img').last().removeClass('active');
+      $('.images img').last().addClass('unactive')
     }
   }
   else {
-    if ($('.images img').hasClass("active")){
-      immagineattiva.prev('img').addClass('active');
-      immagineattiva.prev('img').removeClass('unactive');
-      immagineattiva.removeClass('active');
-      immagineattiva.addClass('unactive');
-      // console.log(immagineattiva);
-      var nascosta = $('.images .unactive');
-      // console.log(nascosta);
+    var precedente = immagineattiva.prev('img');
+    console.log(precedente);
+    if (precedente.length == 0) {
+      $('.images img').last().addClass('active');
+      $('.images img').last().removeClass('unactive');
+      $('.images img').first().addClass('unactive');
+      $('.images img').first().removeClass('active');
+    }
+    else {
+      if ($('.images img').hasClass("active")) {
+        immagineattiva.prev('img').addClass('active');
+        immagineattiva.prev('img').removeClass('unactive');
+        immagineattiva.removeClass('active');
+        immagineattiva.addClass('unactive');
+        // console.log(immagineattiva);
+        var nascosta = $('.images .unactive');
+        // console.log(nascosta);
+      }
     }
   }
 })
